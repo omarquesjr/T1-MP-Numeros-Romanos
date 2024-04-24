@@ -11,7 +11,5 @@ int romanos_para_decimal(char const * num_romano) {
     else if (num_romano[i] == 'M') soma += 1000;
     else return -1;
   }
-  if (soma == 0) return -1;
-  else
-    return soma;
+  return soma;
 }
