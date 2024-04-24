@@ -1,4 +1,24 @@
 #include "./romanos.hpp"
+#include <string>
+#include <iostream>
+
+// Converte um decimal para romano
+std::string decimal_para_romanos(int num) {
+  std::string romano = "";
+  int decimais[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+  std::string romanos[] = {"M", "CM", "D", "CD", "C", "XC", "L",
+                           "XL", "X", "IX", "V", "IV", "I"};
+  // Percorre todas as possibilidades de grupos de algarismos romanos
+  for (int i = 0; i < 13; i++) {
+    while (num >= decimais[i]) {
+      // Concatena o algarismo romano enquanto for exigido
+      romano += romanos[i];
+      // Subtrai o valor do algarismo romano concatenado
+      num -= decimais[i];
+    }
+  }
+  return romano;
+}
 // Converte de romanos para decimal
 int romanos_para_decimal(char const * num_romano) {
   int soma = 0;
@@ -45,6 +65,9 @@ int romanos_para_decimal(char const * num_romano) {
       return -1;
     }
   }
-  // Retorna o número em decimal
-  return soma;
+  // Compara o resultado com a conversão reversa.
+  // Se não forem iguais, significa que o número romano não é válido.
+  if (decimal_para_romanos(soma) == num_romano) return soma;
+  else
+    return -1;
 }

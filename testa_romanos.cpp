@@ -42,3 +42,28 @@ TEST_CASE("Algarismos múltiplos (com subtração na conversão)", "[romanos]") 
     REQUIRE(romanos_para_decimal("CMXCV") == 995);
     REQUIRE(romanos_para_decimal("MMCMXCIX") == 2999);
 }
+
+TEST_CASE("Algarismos múltiplos inválidos", "[romanos]") {
+    REQUIRE(romanos_para_decimal("IIII") == -1);
+    REQUIRE(romanos_para_decimal("IIX") == -1);
+    REQUIRE(romanos_para_decimal("VXX") == -1);
+    REQUIRE(romanos_para_decimal("VLX") == -1);
+    REQUIRE(romanos_para_decimal("LCXX") == -1);
+    REQUIRE(romanos_para_decimal("XDLL") == -1);
+    REQUIRE(romanos_para_decimal("ILXXX") == -1);
+    REQUIRE(romanos_para_decimal("ICL") == -1);
+    REQUIRE(romanos_para_decimal("IDL") == -1);
+    REQUIRE(romanos_para_decimal("IMDL") == -1);
+    REQUIRE(romanos_para_decimal("VV") == -1);
+    REQUIRE(romanos_para_decimal("LL") == -1);
+    REQUIRE(romanos_para_decimal("DD") == -1);
+    REQUIRE(romanos_para_decimal("VCX") == -1);
+    REQUIRE(romanos_para_decimal("VDCC") == -1);
+    REQUIRE(romanos_para_decimal("VMDCCC") == -1);
+    REQUIRE(romanos_para_decimal("XMCC") == -1);
+    REQUIRE(romanos_para_decimal("LDXX") == -1);
+    REQUIRE(romanos_para_decimal("LMCXX") == -1);
+    REQUIRE(romanos_para_decimal("XXXX") == -1);
+    REQUIRE(romanos_para_decimal("CCCC") == -1);
+    REQUIRE(romanos_para_decimal("MMMM") == -1);
+}
