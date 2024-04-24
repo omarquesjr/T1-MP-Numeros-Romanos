@@ -67,7 +67,7 @@ int romanos_para_decimal(char const * num_romano) {
   }
   // Compara o resultado com a conversão reversa.
   // Se não forem iguais, significa que o número romano não é válido.
-  if (decimal_para_romanos(soma) == num_romano) return soma;
+  if (soma <= 3000 && decimal_para_romanos(soma) == num_romano) return soma;
   else
     return -1;
 }

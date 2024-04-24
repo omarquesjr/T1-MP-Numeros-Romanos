@@ -67,3 +67,8 @@ TEST_CASE("Algarismos múltiplos inválidos", "[romanos]") {
     REQUIRE(romanos_para_decimal("CCCC") == -1);
     REQUIRE(romanos_para_decimal("MMMM") == -1);
 }
+
+TEST_CASE("Valores não cobertos (maior que 3000)", "[romanos]") {
+    REQUIRE(romanos_para_decimal("MMMI") == -1);
+    REQUIRE(romanos_para_decimal("MMMCMXCV") == -1);
+}
