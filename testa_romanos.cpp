@@ -9,10 +9,17 @@ TEST_CASE("Algarismos únicos", "[romanos]") {
     REQUIRE(romanos_para_decimal("L") == 50);
     REQUIRE(romanos_para_decimal("C") == 100);
     REQUIRE(romanos_para_decimal("D") == 500);
-    REQUIRE(romanos_para_decimal("M") == 1000);  
+    REQUIRE(romanos_para_decimal("M") == 1000);
 }
 
 TEST_CASE("Algarismos inválidos", "[romanos]") {
     REQUIRE(romanos_para_decimal("G") == -1);
     REQUIRE(romanos_para_decimal("i") == -1);
+    REQUIRE( romanos_para_decimal("A") == -1);
+    REQUIRE( romanos_para_decimal("U") == -1);
+    REQUIRE( romanos_para_decimal("Z") == -1);
+    REQUIRE( romanos_para_decimal("b") == -1);
+    REQUIRE( romanos_para_decimal("m") == -1);
+    REQUIRE( romanos_para_decimal("O") == -1);
+    REQUIRE( romanos_para_decimal("T") == -1);
 }
