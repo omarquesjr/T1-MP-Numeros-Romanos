@@ -23,3 +23,11 @@ TEST_CASE("Algarismos inválidos", "[romanos]") {
     REQUIRE(romanos_para_decimal("O") == -1);
     REQUIRE(romanos_para_decimal("T") == -1);
 }
+
+TEST_CASE("Algarismos múltiplos (somente soma na conversão)", "[romanos]") {
+    REQUIRE(romanos_para_decimal("II") == 2);
+    REQUIRE(romanos_para_decimal("XI") == 11);
+    REQUIRE(romanos_para_decimal("XVIII") == 18);
+    REQUIRE(romanos_para_decimal("DCXXXIII") == 633);
+    REQUIRE(romanos_para_decimal("MDCLXXVIII") == 1678);
+}
