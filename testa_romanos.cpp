@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
-#include "romanos.hpp"
+#include "./catch.hpp"
+#include "./romanos.hpp"
 
 TEST_CASE("Algarismos únicos", "[romanos]") {
     REQUIRE(romanos_para_decimal("I") == 1);
@@ -30,4 +30,15 @@ TEST_CASE("Algarismos múltiplos (somente soma na conversão)", "[romanos]") {
     REQUIRE(romanos_para_decimal("XVIII") == 18);
     REQUIRE(romanos_para_decimal("DCXXXIII") == 633);
     REQUIRE(romanos_para_decimal("MDCLXXVIII") == 1678);
+}
+
+TEST_CASE("Algarismos múltiplos (com subtração na conversão)", "[romanos]") {
+    REQUIRE(romanos_para_decimal("IV") == 4);
+    REQUIRE(romanos_para_decimal("XVIII") == 18);
+    REQUIRE(romanos_para_decimal("LIX") == 59);
+    REQUIRE(romanos_para_decimal("CLXXXIV") == 184);
+    REQUIRE(romanos_para_decimal("CDLXXXVII") == 487);
+    REQUIRE(romanos_para_decimal("DCXXXIII") == 633);
+    REQUIRE(romanos_para_decimal("CMXCV") == 995);
+    REQUIRE(romanos_para_decimal("MMCMXCIX") == 2999);
 }
